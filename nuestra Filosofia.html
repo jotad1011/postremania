@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tortas - Postre Manía</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="javascript.js"></script>
+</head>
+<body>
+    <div class="decorative-elements">
+        <div class="float-element">🧁</div>
+        <div class="float-element">🎂</div>
+        <div class="float-element">🍰</div>
+        <div class="float-element">🧁</div>
+    </div>
+
+    <header class="header">
+        <div class="logo-section">
+            <div class="logo"></div>
+            <div class="brand-text">
+                <div class="brand-name"></div>
+                <div class="brand-subtitle">POSTRE MANÍA</div>
+            </div>
+        </div>
+        
+          <nav class="nav-menu">
+            <a href="./index.html" class="nav-item">Inicio</a>
+            <div class="nav-item dropdown">
+                <a class="nav-item">Productos <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="./tortas.html" class="dropdown-item">Tortas</a>
+                    <a href="./postres.html" class="dropdown-item">Postres</a>
+                </div>
+            </div>
+            <a href="./tienda fisica.html" class="nav-item">Punto Físico</a>
+            <a href="./nuestra Filosofia.html" class="nav-item">Nuestra Filosofia</a>
+             <button class="cart-button" id="cartButton">
+                🛒
+                <span class="cart-count hidden" id="cartCount">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Modal de configuración de producto -->
+    <div class="product-modal-overlay" id="productModalOverlay"></div>
+    <div class="product-modal" id="productModal">
+        <div class="modal-header">
+            <h2 id="modalProductName">Configurar Producto</h2>
+            <button class="modal-close" id="modalClose">×</button>
+        </div>
+        
+        <div class="modal-body" id="modalBody">
+            <!-- Se llenará dinámicamente con JavaScript -->
+        </div>
+        
+        <div class="modal-footer">
+            <div class="modal-total">
+                <span>Total:</span>
+                <span id="modalTotal">$0</span>
+            </div>
+            <button class="modal-add-btn" id="modalAddToCart">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Panel del carrito -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>🛒 Tu Carrito</h2>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty" id="cartEmpty">
+                <div class="cart-empty-icon">🛒</div>
+                <p style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">Tu carrito está vacío</p>
+                <p>¡Agrega algunos postres deliciosos!</p>
+            </div>
+        </div>
+        
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <div class="cart-total-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">$0</span>
+                </div>
+                <div class="cart-total-row cart-total-final">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+            </div>
+            
+            <button class="checkout-btn" id="checkoutBtn">
+                Realizar Pedido por WhatsApp
+            </button>
+            
+            <button class="clear-cart-btn" id="clearCartBtn">
+                Vaciar Carrito
+            </button>
+        </div>
+    </div>
+
+    <main class="main-container">
+        <div class="social-sidebar">
+            <a href="https://www.facebook.com/profile.php?id=61563527319645" target="_blank">
+                <div class="icon">
+                    <img src="./IMAGENES/facebook.webp" alt="Facebook">
+                </div>
+                <span class="text">Facebook</span>
+            </a>
+          
+            <a href="https://www.instagram.com/postremania.cucuta/?hl=es-la" target="_blank">
+                <div class="icon">
+                    <img src="./IMAGENES/instagram.avif" alt="Instagram">
+                </div>
+                <span class="text">Instagram</span>
+            </a>
+            
+            <a href="https://www.tiktok.com/@postremania.cucuta" target="_blank">
+                <div class="icon">
+                    <img src="./IMAGENES/tiktok.webp" alt="TikTok">
+                </div>
+                <span class="text">TikTok</span>
+            </a>
+        </div>
+<section class="nuestra-filosofia">
+    <div class="videos-container">
+        <div class="video-row video-row-reverse">
+            <div class="video-content">
+                <h3>Nuestra Filosofía</h3>
+                <p>
+                    En <strong>Postre Manía</strong>, creemos que cada detalle, cada sabor y cada postre pueden ser una expresión de amor, gratitud y servicio. 
+                    No solo elaboramos postres, sino momentos dulces que nacen del corazón y son ofrecidos con excelencia, porque sabemos que todo lo que hacemos debe honrar a Dios.
+                </p>
+
+                <blockquote>
+                    “Jehová te enviará su bendición sobre tus graneros, y sobre todo aquello en que pongas tu mano.”<br>
+                    <strong>Deuteronomio 28:8</strong>
+                </blockquote>
+
+                <p>
+                    Cada receta, cada mezcla y cada decoración están hechas con dedicación y alegría, recordando que el éxito verdadero proviene de Dios 
+                    y que los pequeños comienzos pueden transformarse en grandes bendiciones cuando se hacen con fe.
+                </p>
+
+                <blockquote>
+                    “Y aunque tu principio haya sido pequeño, tu postrer estado será muy grande.”<br>
+                    <strong>Job 8:7</strong>
+                </blockquote>
+
+                <p>
+                    Nuestra filosofía es trabajar con amor, gratitud y excelencia, brindando un servicio que refleje los valores del Reino: 
+                    honestidad, compromiso y cuidado por cada persona que disfruta de nuestros postres. 
+                    Todo lo que somos y hacemos lo ponemos en las manos de Dios, porque Él es quien da sabor, propósito y crecimiento a nuestro emprendimiento.
+                </p>
+            </div>
+
+           <div class="filosofia-video">
+            <video controls preload="metadata">
+                <source src="./videos/filosofia.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+     <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Sección Sobre Nosotros -->
+            <div class="footer-section">
+                <h3>Postre Manía</h3>
+                <p>Endulzando momentos especiales con amor y dedicación desde el corazón de Ocaña.</p>
+                <p style="margin-top: 15px; font-style: italic; color: #ff69b4;">
+                    "Un postre no es solo un capricho, es una invitación a saborear la felicidad"
+                </p>
+            </div>
+
+            <!-- Sección Contacto -->
+            <div class="footer-section">
+                <h3>Contáctanos</h3>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <p>Cl. 5B #1-37, Ocaña<br>Norte de Santander</p>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <p>+57 312 3098686</p>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">⏰</span>
+                    <p>Pedidos solo por encargos</p>
+                </div>
+            </div>
+
+            <!-- Sección Información -->
+            <div class="footer-section">
+                <h3>Información Útil</h3>
+                <div class="contact-item">
+                    <span class="contact-icon">🎂</span>
+                    <p>Pedidos personalizados disponibles</p>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🚗</span>
+                    <p>Servicio a domicilio solo en Ocaña</p>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💳</span>
+                    <p>Aceptamos efectivo y transferencias</p>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">⭐</span>
+                    <p>Calidad garantizada</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Línea final -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Postre Manía. Hecho con <span class="heart">♥</span> en Ocaña, Colombia</p>
+        </div>
+    </footer>
+   <script>  
+   // FUNCIONALIDAD DE VIDEOS
+        function playVideo(overlay) {
+            const videoContainer = overlay.closest('.video-container');
+            const video = videoContainer.querySelector('video');
+            
+            if (video.paused) {
+                // Pausar otros videos
+                document.querySelectorAll('video').forEach(v => {
+                    if (v !== video) {
+                        v.pause();
+                        v.closest('.video-container').classList.remove('playing');
+                        v.closest('.video-container').querySelector('.video-overlay').style.opacity = '1';
+                    }
+                });
+                
+                // Reproducir video actual
+                video.muted = false; // Quitar silencio
+                video.play();
+                videoContainer.classList.add('playing');
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
+            }
+        }
+
+        // Event listeners para videos
+        document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('.video-container video');
+            
+            videos.forEach(video => {
+                // Cuando termine el video, mostrar overlay
+                video.addEventListener('ended', function() {
+                    const videoContainer = this.closest('.video-container');
+                    const overlay = videoContainer.querySelector('.video-overlay');
+                    videoContainer.classList.remove('playing');
+                    overlay.style.opacity = '1';
+                    overlay.style.pointerEvents = 'auto';
+                });
+                
+                // Click en el video para pausar/reproducir
+                video.addEventListener('click', function() {
+                    const videoContainer = this.closest('.video-container');
+                    const overlay = videoContainer.querySelector('.video-overlay');
+                    
+                    if (this.paused) {
+                        this.muted = false;
+                        this.play();
+                        videoContainer.classList.add('playing');
+                        overlay.style.opacity = '0';
+                        overlay.style.pointerEvents = 'none';
+                    } else {
+                        this.pause();
+                        videoContainer.classList.remove('playing');
+                        overlay.style.opacity = '1';
+                        overlay.style.pointerEvents = 'auto';
+                    }
+                });
+
+                // Asegurar que el video tenga sonido cuando se reproduce
+                video.addEventListener('play', function() {
+                    this.muted = false;
+                });
+
+                // Controlar el volumen
+                video.addEventListener('loadedmetadata', function() {
+                    this.volume = 0.8; // 80% del volumen máximo
+                });
+            });
+        });
+    </script>
+</body>
+</html>

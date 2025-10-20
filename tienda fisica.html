@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - Postre Manía</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="javascript.js"></script>
+</head>
+<body>
+     <div class="decorative-elements">
+        <div class="float-element">🧁</div>
+        <div class="float-element">🎂</div>
+        <div class="float-element">🍰</div>
+        <div class="float-element">🧁</div>
+    </div>
+
+    <header class="header">
+        <div class="logo-section">
+            <div class="logo"></div>
+            <div class="brand-text">
+                <div class="brand-name"></div>
+                <div class="brand-subtitle">POSTRE MANÍA</div>
+            </div>
+        </div>
+        
+          <nav class="nav-menu">
+            <a href="./index.html" class="nav-item">Inicio</a>
+            <div class="nav-item dropdown">
+                <a class="nav-item">Productos <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="./tortas.html" class="dropdown-item">Tortas</a>
+                    <a href="./postres.html" class="dropdown-item">Postres</a>
+                </div>
+            </div>
+            <a href="./tienda fisica.html" class="nav-item">Punto Físico</a>
+            <a href="./nuestra Filosofia.html" class="nav-item">Nuestra Filosofia</a>
+             <button class="cart-button" id="cartButton">
+                🛒
+                <span class="cart-count hidden" id="cartCount">0</span>
+            </button>
+        </nav>
+    </header>
+<div class="cart-overlay" id="cartOverlay"></div>
+<!-- Modal de configuración de producto -->
+<div class="product-modal-overlay" id="productModalOverlay"></div>
+<div class="product-modal" id="productModal">
+    <div class="modal-header">
+        <h2 id="modalProductName">Configurar Producto</h2>
+        <button class="modal-close" id="modalClose">×</button>
+    </div>
+    
+    <div class="modal-body" id="modalBody">
+        <!-- Se llenará dinámicamente con JavaScript -->
+    </div>
+    
+    <div class="modal-footer">
+        <div class="modal-total">
+            <span>Total:</span>
+            <span id="modalTotal">$0</span>
+        </div>
+        <button class="modal-add-btn" id="modalAddToCart">Agregar al Carrito</button>
+    </div>
+</div>
+    <!-- Panel del carrito -->
+    <div class="cart-panel" id="cartPanel">
+        
+        <div class="cart-header">
+            <h2>🛒 Tu Carrito</h2>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty" id="cartEmpty">
+                <div class="cart-empty-icon">🛒</div>
+                <p style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">Tu carrito está vacío</p>
+                <p>¡Agrega algunos postres deliciosos!</p>
+            </div>
+        </div>
+        
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <div class="cart-total-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">$0</span>
+                </div>
+                <div class="cart-total-row cart-total-final">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+            </div>
+            
+            <button class="checkout-btn" id="checkoutBtn">
+                Realizar Pedido por WhatsApp
+            </button>
+            
+            <button class="clear-cart-btn" id="clearCartBtn">
+                Vaciar Carrito
+            </button>
+        </div>
+    </div>
+    <main class="main-container">
+        <div class="social-sidebar">
+            <a href="https://www.facebook.com/profile.php?id=61563527319645" target="_blank">
+                <div class="icon">
+                    <img src="./IMAGENES/facebook.webp" alt="Facebook">
+                </div>
+                <span class="text">Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/postremania.cucuta/?hl=es-la" target="_blank">
+                <div class="icon">
+                    <img src="./IMAGENES/instagram.avif" alt="Instagram">
+                </div>
+                <span class="text">Instagram</span>
+            </a>
+            <a href="https://www.tiktok.com/@postremania.cucuta" target="_blank">
+                <div class="icon">
+                    <img src="./IMAGENES/tiktok.webp" alt="TikTok">
+                </div>
+                <span class="text">TikTok</span>
+            </a>
+        </div>
+
+    <!-- Sección del Mapa -->
+    <section class="mapa-section">
+        <div class="mapa-container">
+            <div id="map">
+                <div class="map-info-card">
+                    <h2>PUNTO DE VENTA</h2>
+                    <h1>Ocaña</h1>
+                    
+                    <div class="info-item">
+                        <svg class="icon-map" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <div class="info-content">
+                            <div class="info-label">Dirección</div>
+                            <a href="https://www.google.com/maps/place/Cl.+5B+%23+1-37,+Oca%C3%B1a,+Norte+de+Santander/@8.2699973,-73.3662597,19z" target="_blank" class="info-text">
+                                Cl. 5B # 1-37, Ocaña
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <svg class="icon-map" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <div class="info-content">
+                            <div class="info-label">Teléfono</div>
+                            <a href="tel:+573001234567" class="info-text">312 3098686</a>
+                        </div>
+                    </div>
+
+                    <a href="https://www.google.com/maps/dir//8.269996,-73.365616" target="_blank" class="ubi-btn">
+                        Cómo Llegar 🗺️
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</body>
+</html>
