@@ -145,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
         productsGrid.innerHTML = '';
         products.forEach(product => productsGrid.appendChild(product));
     }
-
     const sortSelect = document.querySelector('.sort-select');
     if (sortSelect) {
         sortSelect.addEventListener('change', function(e) {
@@ -154,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ========== CÓDIGO DE VIDEOS (solo si existen) ==========
+    // CÓDIGO DE VIDEOS 
     const videos = document.querySelectorAll('.video-container video');
     
     videos.forEach(video => {
@@ -181,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== CÓDIGO DEL MAPA (solo si existe) ==========
     const mapElement = document.getElementById('map');
     
-    if (mapElement && typeof L !== 'undefined') {
+    if (mapElement && typeof L !== 'undefined') {  // Verificar si Leaflet está cargado
         const lat = 8.269996;
         const lng = -73.365616;
 
@@ -326,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: productId,
             name: productName,
             emoji: productEmoji,
-            ...productConfig
+            ...productConfig //operador spread para incluir variantes, salsas, toppings
         };
 
         modalProductName.textContent = productName;
