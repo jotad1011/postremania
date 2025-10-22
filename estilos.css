@@ -1517,7 +1517,7 @@ body {
             transform: translate(-50%, -50%) rotate(45deg);
             width: 12px;
             height: 12px;
-            background: white;
+            background: rgb(255, 255, 255);
             border-radius: 50%;
         }
         
@@ -1534,51 +1534,137 @@ body {
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .mapa-section {
-                margin: 30px 10px;
-            }
+      @media (max-width: 768px) {
+    .mapa-section {
+        margin: 30px 10px;
+    }
 
-            .mapa-container {
-                height: 450px;
-                border-width: 3px;
-            }
+    .mapa-container {
+      z-index: 500;
+        height: 450px;
+        border-width: 3px;
+    }
 
-            .info-card {
-                position: relative;
-                top: 0;
-                left: 0;
-                max-width: 100%;
-                border-radius: 15px 15px 0 0;
-                margin-bottom: -15px;
-            }
+    .map-info-card {
+      right: auto;  
+               /* elimina el estiramiento completo */
+        width: 40%;
+        top: 0px;              /* ajusta el ancho: recorta hacia donde hiciste la línea azul */
+        left: 0px;              /* pequeño margen izquierdo */
+        padding: 12px 12px;       /* espacio interno más compacto */
+        border-radius: 12px;
+    }
+    .map-info-card h2 {
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
 
-            .info-card h1 {
-                font-size: 24px;
-            }
+    .map-info-card h1 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+.leaflet-control-zoom {
+    font-size: 0.1px;
+       right: -670px;
+    margin: 2px 2px;
+position: absolute;
+     }
+    .info-item {
+        margin-bottom: 6px;
+        padding: 4px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
 
-            .info-text {
-                font-size: 14px;
-            }
-        }
+    .info-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
 
-        @media (max-width: 480px) {
-            .mapa-section {
-                margin: 20px 5px;
-            }
+    .icon-map {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+    }
 
-            .mapa-container {
-                height: 400px;
-            }
+    .info-label {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
 
-            .info-card {
-                padding: 20px;
-            }
+    .info-text {
+        font-size: 16px;
+        
+        
+    }
 
-            .info-card h1 {
-                font-size: 20px;
-            }
-        }
+    .ubi-btn {
+        font-size: 1em;
+        padding: 6px 12px;
+        margin-top: 6px;
+        
+    }
+
+}
+
+@media (max-width: 480px) {
+    .mapa-section {
+        margin: 20px 5px;
+    }
+.leaflet-control-zoom {
+    font-size: 0.1px;
+       right: -308px;
+    margin: 2px 2px;
+position: absolute;
+     }
+    .mapa-container {
+        height: 400px;
+    }
+
+    .map-info-card {
+       right: auto;              /* elimina el estiramiento completo */
+        width: 37%;
+        top: 0px;              /* ajusta el ancho: recorta hacia donde hiciste la línea azul */
+        left: 0px;              /* pequeño margen izquierdo */
+        padding: 8px 10px;       /* espacio interno más compacto */
+        border-radius: 12px;
+    }
+    .map-info-card h2 {
+        font-size: 10px;
+        margin-bottom: 2px;
+    }
+
+    .map-info-card h1 {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .info-item {
+        margin-bottom: 3px;
+        padding: 2px 0;
+    }
+
+    .icon-map {
+        width: 14px;
+        height: 14px;
+        margin-right: 8px;
+    }
+
+    .info-label {
+        font-size: 12px;
+    }
+
+    .info-text {
+        font-size: 12px;
+        z-index: 1001;
+    }
+
+    .ubi-btn {
+        
+        font-size: 0.70em;
+        padding: 5px 12px;
+        margin-top: 6px;
+    }
+}
         /* Estilos para el boton del carrito de compras */
         .cart-button {
     position: relative;
@@ -2153,103 +2239,7 @@ body {
         transform: translateX(-50%);
     }
 }
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
 
-    .logo {
-        width: 60px;
-        height: 60px;
-    }
-
-    .brand-subtitle {
-        font-size: 18px;
-    }
-
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .nav-item {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    .dropdown-menu {
-        min-width: 150px;
-    }
-
-    .slider-title {
-        font-size: 20px;
-        padding: 0 15px;
-    }
-
-    .products-title {
-        font-size: 24px;
-    }
-
-    .products-subtitle {
-        font-size: 14px;
-        padding: 0 15px;
-    }
-
-    .slider-section {
-        height: 50vh;
-        margin: 10px 5px;
-        border-width: 3px;
-    }
-
-    .ubi-section {
-        margin: 30px 10px;
-    }
-
-    .ubi-container {
-        border-width: 3px;
-    }
-
-    .ubi-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-        min-height: auto;
-    }
-
-    .ubi-map-icon {
-        padding: 40px 20px;
-        margin-left: 0;
-    }
-
-    .ubi-logo {
-        width: 150px;
-        height: 150px;
-    }
-
-    .ubi-content {
-        padding: 30px 20px;
-        margin-left: 0;
-    }
-
-    .ubi-text-title {
-        font-size: 28px;
-        margin-bottom: 25px;
-    }
-
-    .ubi-text-line {
-        font-size: 16px;
-        padding-left: 20px;
-        margin-bottom: 10px;
-    }
-
-    .ubi-btn {
-        font-size: 1em;
-        padding: 12px 24px;
-        border-width: 2px;
-    }
 
 @media (max-width: 768px) {
     .header {
@@ -2639,5 +2629,4 @@ body {
         font-size: 13px;
         padding: 10px 12px;
     }
-}
 }
