@@ -633,7 +633,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const total = formatPrice(cartData.reduce((sum, item) => sum + (item.price * item.quantity), 0));
             const whatsappMessage = `¡Hola! Me gustaría hacer el siguiente pedido:%0A%0A${message}%0A%0A*Total: ${total}*`;
             
-            window.open(`https://wa.me/573123098686?text=${whatsappMessage}`, '_blank');
+          window.location.href = `https://wa.me/573123098686?text=${encodeURIComponent(whatsappMessage)}`;
         });
     }
 
