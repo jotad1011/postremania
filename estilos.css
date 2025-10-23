@@ -1538,7 +1538,44 @@ body {
     .mapa-section {
         margin: 30px 10px;
     }
+.ubi-section {
+        margin: 40px 20px;
+    }
 
+    .ubi-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .ubi-map-icon {
+        margin-left: 0;
+        padding: 40px 20px;
+        justify-content: center;
+    }
+
+    .ubi-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .ubi-content {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+
+    .ubi-text-title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .ubi-text-line {
+        font-size: 18px;
+        padding-left: 0;
+    }
+
+    .ubi-text-line::before {
+        display: none;
+    }
     .mapa-container {
       z-index: 500;
         height: 450px;
