@@ -1656,6 +1656,18 @@ position: absolute;
     .mapa-container {
         height: 400px;
     }
+ .ubi-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .ubi-text-title {
+        font-size: 24px;
+    }
+
+    .ubi-text-line {
+        font-size: 16px;
+    }
 
     .map-info-card {
        right: auto;              /* elimina el estiramiento completo */
@@ -2494,16 +2506,17 @@ position: absolute;
         font-size: 20px;
     }
     
-    .toppings-grid {
+     .toppings-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         padding: 0 10px;
     }
-    
+
     .topping-item {
         font-size: 14px;
-        padding: 12px 15px;
+        padding: 12px 10px;
     }
+
 }
 
 @media (max-width: 480px) {
@@ -2657,13 +2670,14 @@ position: absolute;
         padding: 30px 15px;
     }
     
-    .toppings-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
+   .toppings-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0 5px;
     }
-    
+
     .topping-item {
         font-size: 13px;
-        padding: 10px 12px;
+        padding: 10px 8px;
     }
-}
+    }
